@@ -1,0 +1,404 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Make a Referral | The New Start Project Community CIC</title>
+  <meta name="description" content="Refer someone to The New Start Project Community CIC. Supported accommodation and individual support for single adults in Devon.">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <nav class="site-nav">
+    <div class="nav-inner">
+      <a href="index.html" class="nav-brand">
+        <img src="logo.svg" alt="" class="brand-mark">
+        <span class="brand-text">New Start <span class="brand-accent">Project</span></span>
+      </a>
+      <button class="nav-toggle" onclick="document.querySelector('.nav-links').classList.toggle('open')" aria-label="Menu">
+        <span></span><span></span><span></span>
+      </button>
+      <ul class="nav-links">
+        <li><a href="index.html">Home</a></li>
+        <li><a href="about.html">About</a></li>
+        <li><a href="journey.html">Your Journey</a></li>
+        <li><a href="services.html">Support</a></li>
+        <li><a href="referrals.html" class="active">Referrals</a></li>
+        <li><a href="important-information.html">Important Info</a></li>
+        <li><a href="contact.html">Contact</a></li>
+      </ul>
+    </div>
+  </nav>
+
+  <section class="hero">
+    <div class="container">
+      <div class="hero-badge">The New Start Project Community CIC</div>
+      <h1>Make a <span>Referral</span></h1>
+      <p>If you're supporting someone who needs a safe, stable place to rebuild, this form starts the conversation. You don't need every answer &mdash; tell us what you know, and we'll take it from there.</p>
+    </div>
+  </section>
+
+  <div class="rf-wrap">
+
+    <form id="referralForm" novalidate>
+
+      <!-- 1. Referrer -->
+      <section class="rf-card">
+        <h2><span class="rf-num">1</span> About you</h2>
+        <p class="rf-lead">So we know who to talk to about this referral.</p>
+
+        <div class="rf-grid2">
+          <div>
+            <label for="ref_name">Your name <span class="rf-req">*</span></label>
+            <input type="text" id="ref_name" name="referrer_name" autocomplete="name">
+            <p class="rf-err">Please tell us your name.</p>
+          </div>
+          <div>
+            <label for="ref_org">Your organisation or agency <span class="rf-req">*</span></label>
+            <input type="text" id="ref_org" name="referrer_org">
+            <p class="rf-err">Please tell us where you're referring from.</p>
+          </div>
+        </div>
+
+        <div class="rf-grid2">
+          <div>
+            <label for="ref_role">Your role</label>
+            <input type="text" id="ref_role" name="referrer_role" placeholder="e.g. Support worker, Social worker">
+          </div>
+          <div>
+            <label for="ref_rel">Your relationship to the person</label>
+            <select id="ref_rel" name="referrer_relationship">
+              <option value="">Please choose&hellip;</option>
+              <option>Support / key worker</option>
+              <option>Social worker</option>
+              <option>Probation / criminal justice</option>
+              <option>Health or mental health service</option>
+              <option>Domestic abuse service</option>
+              <option>Local authority / housing options</option>
+              <option>Family member or friend</option>
+              <option>Self-referral (I'm referring myself)</option>
+              <option>Other</option>
+            </select>
+          </div>
+        </div>
+
+        <div class="rf-grid2">
+          <div>
+            <label for="ref_email">Your email <span class="rf-req">*</span></label>
+            <input type="email" id="ref_email" name="referrer_email" autocomplete="email">
+            <p class="rf-err">Please give a valid email so we can reply.</p>
+          </div>
+          <div>
+            <label for="ref_phone">Your phone <span class="rf-req">*</span></label>
+            <input type="tel" id="ref_phone" name="referrer_phone" autocomplete="tel">
+            <p class="rf-err">Please give a contact number.</p>
+          </div>
+        </div>
+      </section>
+
+      <!-- 2. Person being referred -->
+      <section class="rf-card">
+        <h2><span class="rf-num">2</span> About the person you're referring</h2>
+        <p class="rf-lead">If you're referring yourself, this is about you. Share only what you're able to at this stage.</p>
+
+        <div class="rf-grid2">
+          <div>
+            <label for="p_name">Their name <span class="rf-req">*</span></label>
+            <input type="text" id="p_name" name="person_name">
+            <p class="rf-err">Please give a name (first name is fine to start).</p>
+          </div>
+          <div>
+            <label for="p_pref">Preferred name and pronouns</label>
+            <input type="text" id="p_pref" name="person_preferred">
+          </div>
+        </div>
+
+        <div class="rf-grid2">
+          <div>
+            <label for="p_dob">Date of birth</label>
+            <input type="date" id="p_dob" name="person_dob">
+          </div>
+          <div>
+            <label for="p_contact">Their contact details, if any</label>
+            <input type="text" id="p_contact" name="person_contact" placeholder="Phone or email &mdash; only if appropriate to share">
+          </div>
+        </div>
+
+        <label for="p_where">Where are they staying now? <span class="rf-req">*</span></label>
+        <select id="p_where" name="person_where">
+          <option value="">Please choose&hellip;</option>
+          <option>Rough sleeping / no fixed address</option>
+          <option>Emergency or temporary accommodation (incl. B&amp;B / hotel)</option>
+          <option>Sofa-surfing / staying with others short-term</option>
+          <option>At risk of losing their current accommodation</option>
+          <option>Leaving prison / in custody</option>
+          <option>Fleeing an unsafe situation</option>
+          <option>Other</option>
+        </select>
+        <p class="rf-err">Please tell us their current situation.</p>
+
+        <label for="p_area">Which area or council are they connected to? <span class="rf-req">*</span></label>
+        <input type="text" id="p_area" name="person_area" placeholder="e.g. Torbay, Torquay, Paignton, Brixham">
+        <p class="rf-err">Please tell us the area.</p>
+      </section>
+
+      <!-- 3. Situation and support -->
+      <section class="rf-card">
+        <h2><span class="rf-num">3</span> Their situation and support</h2>
+        <p class="rf-lead">This helps us understand whether we're the right fit and how best to welcome them.</p>
+
+        <label for="s_story">In a few lines, what's brought them to needing supported accommodation? <span class="rf-req">*</span></label>
+        <textarea id="s_story" name="situation_summary"></textarea>
+        <p class="rf-hint">Plain language is fine. You don't need to write a report &mdash; a short picture of where they are is enough.</p>
+        <p class="rf-err">Please give us a short summary.</p>
+
+        <fieldset>
+          <legend>Which of these reflect their circumstances? (tick any that apply)</legend>
+          <div class="rf-checks">
+            <label><input type="checkbox" name="circumstances" value="Experienced homelessness"> Someone who has experienced homelessness</label>
+            <label><input type="checkbox" name="circumstances" value="In recovery"> Someone in recovery from addiction</label>
+            <label><input type="checkbox" name="circumstances" value="Survivor of domestic abuse"> A survivor of domestic abuse</label>
+            <label><input type="checkbox" name="circumstances" value="Leaving prison"> Someone leaving prison</label>
+            <label><input type="checkbox" name="circumstances" value="Care leaver"> A care leaver</label>
+            <label><input type="checkbox" name="circumstances" value="Managing mental health"> Someone managing their mental health</label>
+            <label><input type="checkbox" name="circumstances" value="Other / prefer not to categorise"> Other, or would rather not put it in a box</label>
+          </div>
+        </fieldset>
+
+        <label for="s_support">What kind of support do you think would help them settle?</label>
+        <textarea id="s_support" name="support_thoughts"></textarea>
+        <p class="rf-hint">There's no fixed package &mdash; support is built around each person. This just helps us start in the right place.</p>
+      </section>
+
+      <!-- 4. Risk and safety -->
+      <section class="rf-card">
+        <h2><span class="rf-num">4</span> Keeping everyone safe</h2>
+        <p class="rf-lead">So we can welcome them well and keep them, our other residents, and our team safe. A fuller risk conversation happens later &mdash; this is just what we should know now.</p>
+
+        <label for="r_risks">Are there any risks or safety needs we should be aware of?</label>
+        <textarea id="r_risks" name="risks"></textarea>
+        <p class="rf-hint">For example: risks to themselves, risks from another person, or anything that affects where and how they're accommodated. If you're not sure, say so.</p>
+
+        <label for="r_known">Is anyone who may pose a risk to this person aware of where they might be living?</label>
+        <select id="r_known" name="risk_address_known">
+          <option value="">Please choose&hellip;</option>
+          <option>No</option>
+          <option>Yes</option>
+          <option>Unsure</option>
+          <option>Not applicable</option>
+        </select>
+        <p class="rf-hint">Important where someone is leaving an abusive or unsafe situation.</p>
+      </section>
+
+      <!-- 5. Consent and urgency -->
+      <section class="rf-card">
+        <h2><span class="rf-num">5</span> Consent and timing</h2>
+        <p class="rf-lead">We can only hold and use someone's information with a proper basis for doing so.</p>
+
+        <label for="c_consent">Has the person agreed to this referral being made? <span class="rf-req">*</span></label>
+        <select id="c_consent" name="person_consent">
+          <option value="">Please choose&hellip;</option>
+          <option>Yes &mdash; they've agreed to this referral</option>
+          <option>Not yet &mdash; we'll need to confirm their consent before proceeding</option>
+          <option>This is a self-referral</option>
+        </select>
+        <p class="rf-err">Please let us know.</p>
+
+        <label for="c_urgency">How urgent is this?</label>
+        <select id="c_urgency" name="urgency">
+          <option value="">Please choose&hellip;</option>
+          <option>Emergency &mdash; they need somewhere tonight / very soon</option>
+          <option>Urgent &mdash; within the next week or so</option>
+          <option>No immediate rush &mdash; planning ahead</option>
+        </select>
+
+        <div class="rf-consent">
+          <p class="rf-note">Before you send this, please read and confirm:</p>
+          <label>
+            <input type="checkbox" id="c_agree" name="data_consent" value="agreed">
+            <span>I confirm the information here is shared to help The New Start Project Community CIC consider this referral, and that I have a proper basis for sharing it (the person's consent, or another lawful basis where I'm acting in a professional capacity). <span class="rf-req">*</span></span>
+          </label>
+          <p class="rf-err">Please confirm this before sending.</p>
+        </div>
+      </section>
+
+      <!-- 6. Anything else -->
+      <section class="rf-card">
+        <h2><span class="rf-num">6</span> Anything else</h2>
+        <p class="rf-lead">Anything you'd like us to know that the form hasn't asked.</p>
+        <label for="x_notes" style="margin-top: 0.25rem;">Additional notes</label>
+        <textarea id="x_notes" name="additional_notes"></textarea>
+      </section>
+
+      <p class="rf-req-note"><span class="rf-req">*</span> These fields are needed so we can respond. Everything else, share what you can.</p>
+
+      <div class="rf-actions">
+        <button type="submit" class="rf-submit" id="submitBtn">Send Referral</button>
+        <div id="formStatus"></div>
+      </div>
+
+      <p class="rf-privacy">
+        The information you provide is used only to consider and, where appropriate, progress this referral. It is held securely and is not shared with anyone outside the people directly involved in that decision, except where we are required to do so to keep someone safe or by law. For any question about how we handle information, contact us on the details below.
+      </p>
+    </form>
+
+    <!-- Success state -->
+    <div id="successPanel" class="rf-card rf-success">
+      <div class="rf-tick">&#10003;</div>
+      <h2>Thank you &mdash; your referral has been received.</h2>
+      <p>We'll be in touch using the contact details you gave us. If this is an emergency and someone is at immediate risk, please also call us directly on 01803 446133 so we can respond straight away.</p>
+    </div>
+
+  </div>
+
+  <footer class="site-footer">
+    <div class="footer-inner">
+      <div class="footer-grid">
+        <div>
+          <div class="footer-brand">
+            <img src="logo.svg" alt="" class="brand-mark">
+            <span>New Start <span class="brand-accent">Project</span></span>
+          </div>
+          <p class="footer-desc">The New Start Project Community CIC provides supported accommodation and individual support for single adults across Devon. Every penny of surplus is reinvested into expanding our services.</p>
+          <div class="cic-badge" style="margin-top: 0.75rem;">&#128274; Asset-Locked CIC</div>
+        </div>
+        <div>
+          <div class="footer-heading">Pages</div>
+          <ul class="footer-links">
+            <li><a href="index.html">Home</a></li>
+            <li><a href="about.html">About Us</a></li>
+            <li><a href="journey.html">Your Journey</a></li>
+            <li><a href="services.html">Support</a></li>
+            <li><a href="referrals.html">Referrals</a></li>
+            <li><a href="important-information.html">Important Information</a></li>
+            <li><a href="contact.html">Contact</a></li>
+          </ul>
+        </div>
+        <div>
+          <div class="footer-heading">Contact</div>
+          <ul class="footer-links">
+            <li><a href="mailto:contact@thenewstartproject.co.uk">contact@thenewstartproject.co.uk</a></li>
+            <li><a href="tel:01803446133">01803 446133</a></li>
+            <li>21 Brimhay Gardens, Dartington, Totnes, Devon TQ9 6SG</li>
+          </ul>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <div>&copy; 2026 The New Start Project Community CIC. All rights reserved.</div>
+        <div>Community Interest Company no. 17399292 &middot; Limited by guarantee &middot; <span>Registered in England and Wales</span></div>
+      </div>
+    </div>
+  </footer>
+
+  <script>
+  /* =========================================================
+     BACKEND ENDPOINT
+     Set this to your referral Worker URL once it is deployed,
+     e.g. "https://referrals.thenewstartproject.co.uk/submit".
+     While it is empty, the form validates but will NOT pretend
+     to have sent anything -- it tells the referrer to phone or
+     email instead, so no referral is ever silently lost.
+     ========================================================= */
+  const FORM_ENDPOINT = "";
+
+  const form = document.getElementById('referralForm');
+  const statusEl = document.getElementById('formStatus');
+  const submitBtn = document.getElementById('submitBtn');
+
+  function markError(el, on) {
+    const field = el.closest('div, .rf-consent') || el.parentElement;
+    if (on) { field.classList.add('rf-field-error'); }
+    else { field.classList.remove('rf-field-error'); }
+  }
+
+  function validate() {
+    let ok = true;
+    const required = [
+      'ref_name', 'ref_org', 'ref_email', 'ref_phone',
+      'p_name', 'p_where', 'p_area', 's_story', 'c_consent'
+    ];
+    required.forEach(function (id) {
+      const el = document.getElementById(id);
+      const empty = !el.value.trim();
+      markError(el, empty);
+      if (empty) ok = false;
+    });
+    const email = document.getElementById('ref_email');
+    if (email.value.trim() && !/^[^@\s]+@[^@\s]+\.[^@\s]+$/.test(email.value.trim())) {
+      markError(email, true);
+      ok = false;
+    }
+    const agree = document.getElementById('c_agree');
+    markError(agree, !agree.checked);
+    if (!agree.checked) ok = false;
+    return ok;
+  }
+
+  function collect() {
+    const data = {};
+    const fd = new FormData(form);
+    for (const entry of fd.entries()) {
+      const k = entry[0], v = entry[1];
+      if (k === 'circumstances') {
+        (data.circumstances = data.circumstances || []).push(v);
+      } else {
+        data[k] = v;
+      }
+    }
+    data.submitted_at = new Date().toISOString();
+    return data;
+  }
+
+  form.addEventListener('submit', async function (e) {
+    e.preventDefault();
+    statusEl.style.display = 'none';
+
+    if (!validate()) {
+      statusEl.style.display = 'block';
+      statusEl.style.color = '#b3261e';
+      statusEl.textContent = 'Please check the highlighted fields above.';
+      const firstErr = form.querySelector('.rf-field-error');
+      if (firstErr) firstErr.scrollIntoView({ behavior: 'smooth', block: 'center' });
+      return;
+    }
+
+    const payload = collect();
+
+    if (!FORM_ENDPOINT) {
+      /* No backend connected yet. Never show false success. */
+      statusEl.style.display = 'block';
+      statusEl.style.color = '#b3261e';
+      statusEl.innerHTML = 'This form is not yet connected, so nothing has been sent. Please call <a href="tel:01803446133">01803 446133</a> or email <a href="mailto:contact@thenewstartproject.co.uk">contact@thenewstartproject.co.uk</a> and we will take the referral directly.';
+      return;
+    }
+
+    submitBtn.disabled = true;
+    statusEl.style.display = 'block';
+    statusEl.style.color = '#4A5568';
+    statusEl.textContent = 'Sending\u2026';
+
+    try {
+      const res = await fetch(FORM_ENDPOINT, {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify(payload)
+      });
+      if (!res.ok) throw new Error('Bad response');
+      showSuccess();
+    } catch (err) {
+      submitBtn.disabled = false;
+      statusEl.style.color = '#b3261e';
+      statusEl.textContent = 'Something went wrong sending this. Please try again, or call us on 01803 446133.';
+    }
+  });
+
+  function showSuccess() {
+    form.style.display = 'none';
+    const panel = document.getElementById('successPanel');
+    panel.style.display = 'block';
+    panel.scrollIntoView({ behavior: 'smooth', block: 'start' });
+  }
+  </script>
+
+</body>
+</html>
